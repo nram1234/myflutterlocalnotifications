@@ -24,6 +24,10 @@ void main() async {
   final int helloAlarmID = 0;
   await AndroidAlarmManager.periodic(
       const Duration(minutes: 1), helloAlarmID,  printHello);
+  await AndroidAlarmManager.oneShotAt( DateTime.now().add(const Duration(seconds: 10)),
+      123,
+      printHello,
+      alarmClock: true);
 }
 
 class MyApp extends StatelessWidget {
